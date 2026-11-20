@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment variables (tuyet doi khong push len Git)
+.env
+.env.*
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# Build outputs
+frontend/dist/
+build/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Bao cao, tieu luan va tai lieu noi bo (khong push len Git)
+docs/
+scratch/
+PRODUCT.md
+
+# Runtime uploads (chi giu lai .gitkeep de bao toan cau truc thu muc)
+backend/uploads/submissions/*
+!backend/uploads/submissions/.gitkeep
+backend/uploads/assignments/*
+!backend/uploads/assignments/.gitkeep
+backend/uploads/materials/*
+!backend/uploads/materials/.gitkeep
+backend/uploads/courses/*
+!backend/uploads/courses/.gitkeep
+backend/uploads/avatars/*
+!backend/uploads/avatars/.gitkeep
+
+# Tool runtime artifacts
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/config.local.json

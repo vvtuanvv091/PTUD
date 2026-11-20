@@ -1,0 +1,32 @@
+{
+  "name": "educlass-backend",
+  "version": "1.0.0",
+  "description": "Backend RESTful API cho He thong Lop hoc Truc tuyen (MERN Stack)",
+  "main": "src/mayChu.js",
+  "scripts": {
+    "start": "node src/mayChu.js",
+    "dev": "node --watch src/mayChu.js",
+    "seed": "node src/seeds/napDuLieuMau.js"
+  },
+  "keywords": [
+    "mern",
+    "online-classroom",
+    "express",
+    "mongodb",
+    "mongoose",
+    "jwt"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

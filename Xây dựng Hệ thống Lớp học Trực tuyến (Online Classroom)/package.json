@@ -1,0 +1,14 @@
+{
+  "name": "xay-dung-he-thong-lop-hoc-truc-tuyen-online-classroom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Xay dung He thong Lop hoc Truc tuyen (Online Classroom) - Do an Cuoi ky Mon Lap trinh Web (MERN Stack)",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "seed": "npm --prefix backend run seed",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start"
+  }
+}
