@@ -3,7 +3,7 @@ import { Camera, Check, KeyRound, RotateCcw, Save, UploadCloud } from 'lucide-re
 import goiApi, { layThongBaoLoi } from '../services/goiApi';
 import { suDungXacThuc } from '../context/NguCanhXacThuc';
 import { suDungThongBao } from '../context/NguCanhThongBao';
-import { AnhDaiDien, NhanVaiTro } from '../components/ThanhPhanChung';
+import { AnhDaiDien, NhanVaiTro, ONhapMatKhau } from '../components/ThanhPhanChung';
 
 const ANH_DAI_DIEN_CO_SAN = [
   { nhan: 'Giảng viên Nam', anh: '/assets/img/trainers/trainer-1.jpg' },
@@ -275,9 +275,7 @@ export function TrangHoSo() {
             <form onSubmit={xuLyDoiMatKhau} className="d-flex flex-column gap-3">
               <div>
                 <label className="form-label">Mật khẩu hiện tại</label>
-                <input
-                  type="password"
-                  className="form-control"
+                <ONhapMatKhau
                   value={matKhau.currentPassword}
                   onChange={(e) => datMatKhau((p) => ({ ...p, currentPassword: e.target.value }))}
                   required
@@ -285,9 +283,7 @@ export function TrangHoSo() {
               </div>
               <div>
                 <label className="form-label">Mật khẩu mới</label>
-                <input
-                  type="password"
-                  className="form-control"
+                <ONhapMatKhau
                   minLength={6}
                   value={matKhau.newPassword}
                   onChange={(e) => datMatKhau((p) => ({ ...p, newPassword: e.target.value }))}
@@ -296,9 +292,7 @@ export function TrangHoSo() {
               </div>
               <div>
                 <label className="form-label">Nhập lại mật khẩu mới</label>
-                <input
-                  type="password"
-                  className="form-control"
+                <ONhapMatKhau
                   minLength={6}
                   value={matKhau.confirmPassword}
                   onChange={(e) => datMatKhau((p) => ({ ...p, confirmPassword: e.target.value }))}

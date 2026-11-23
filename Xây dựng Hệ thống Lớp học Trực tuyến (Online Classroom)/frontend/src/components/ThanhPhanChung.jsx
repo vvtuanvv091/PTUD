@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { Eye, EyeOff, X } from 'lucide-react';
 import { layChuCaiDau, layNhanVaiTro } from '../utils/dinhDang';
 import { taoDuongDanTep } from '../services/goiApi';
 
@@ -182,6 +182,29 @@ export function TrangThaiTrong({ bieuTuong: BieuTuong, tieuDe, moTa, hanhDong })
         </p>
       )}
       {hanhDong}
+    </div>
+  );
+}
+
+export function ONhapMatKhau({ className = '', ...props }) {
+  const [hienMatKhau, datHienMatKhau] = useState(false);
+
+  return (
+    <div className="position-relative">
+      <input
+        {...props}
+        type={hienMatKhau ? 'text' : 'password'}
+        className={`form-control pe-5 ${className}`.trim()}
+      />
+      <button
+        type="button"
+        className="nut-hien-mat-khau"
+        onClick={() => datHienMatKhau((truoc) => !truoc)}
+        aria-label={hienMatKhau ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
+        title={hienMatKhau ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
+      >
+        {hienMatKhau ? <EyeOff size={17} /> : <Eye size={17} />}
+      </button>
     </div>
   );
 }

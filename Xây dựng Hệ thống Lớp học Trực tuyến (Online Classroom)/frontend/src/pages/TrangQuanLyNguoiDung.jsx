@@ -8,6 +8,7 @@ import {
   HopThoai,
   KhungChoTai,
   NhanVaiTro,
+  ONhapMatKhau,
   TrangThaiTrong,
 } from '../components/ThanhPhanChung';
 import { dinhDangNgay } from '../utils/dinhDang';
@@ -311,9 +312,7 @@ export function TrangQuanLyNguoiDung() {
           <div className="row g-3 mb-3">
             <div className="col-6">
               <label className="form-label">Mật khẩu khởi tạo</label>
-              <input
-                type="password"
-                className="form-control"
+              <ONhapMatKhau
                 value={bieuMau.password}
                 onChange={(e) => datBieuMau((p) => ({ ...p, password: e.target.value }))}
                 minLength={6}

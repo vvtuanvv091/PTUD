@@ -4,6 +4,7 @@ import { ArrowRight, Lock } from 'lucide-react';
 import { suDungXacThuc } from '../context/NguCanhXacThuc';
 import { suDungThongBao } from '../context/NguCanhThongBao';
 import { layThongBaoLoi } from '../services/goiApi';
+import { ONhapMatKhau } from '../components/ThanhPhanChung';
 
 const TAI_KHOAN_MAU = [
   { nhan: 'Quản trị viên', email: 'admin@educlass.vn', biKhoa: false },
@@ -69,9 +70,7 @@ export function TrangDangNhap() {
               </div>
               <div>
                 <label className="form-label">Mật khẩu</label>
-                <input
-                  type="password"
-                  className="form-control"
+                <ONhapMatKhau
                   placeholder="Nhập mật khẩu"
                   value={matKhau}
                   onChange={(e) => datMatKhau(e.target.value)}

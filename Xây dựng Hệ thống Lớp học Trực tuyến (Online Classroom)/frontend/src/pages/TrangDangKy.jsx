@@ -4,6 +4,7 @@ import { UserPlus } from 'lucide-react';
 import { suDungXacThuc } from '../context/NguCanhXacThuc';
 import { suDungThongBao } from '../context/NguCanhThongBao';
 import { layThongBaoLoi } from '../services/goiApi';
+import { ONhapMatKhau } from '../components/ThanhPhanChung';
 
 export function TrangDangKy() {
   const { dangKy } = suDungXacThuc();
@@ -128,9 +129,7 @@ export function TrangDangKy() {
 
               <div className="col-md-6">
                 <label className="form-label">Mật khẩu</label>
-                <input
-                  type="password"
-                  className="form-control"
+                <ONhapMatKhau
                   minLength={6}
                   value={bieuMau.password}
                   onChange={(e) => datBieuMau((p) => ({ ...p, password: e.target.value }))}
@@ -140,9 +139,7 @@ export function TrangDangKy() {
 
               <div className="col-md-6">
                 <label className="form-label">Nhập lại mật khẩu</label>
-                <input
-                  type="password"
-                  className="form-control"
+                <ONhapMatKhau
                   minLength={6}
                   value={bieuMau.confirmPassword}
                   onChange={(e) => datBieuMau((p) => ({ ...p, confirmPassword: e.target.value }))}
