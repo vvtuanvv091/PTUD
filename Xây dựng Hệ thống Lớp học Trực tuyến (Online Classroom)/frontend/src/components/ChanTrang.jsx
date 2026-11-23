@@ -47,7 +47,7 @@ export function ChanTrang({ dienAnh = false }) {
               </li>
               <li>
                 <a href={`${DUONG_DAN_TAI_LEN}/api/health`} target="_blank" rel="noreferrer">
-                  Kiểm tra sức khỏe API (/api/health)
+                  Trạng Thái API (/api/health)
                 </a>
               </li>
             </ul>

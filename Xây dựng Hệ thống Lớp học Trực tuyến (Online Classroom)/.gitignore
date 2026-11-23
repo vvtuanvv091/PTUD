@@ -31,6 +31,7 @@ Thumbs.db
 
 # Bao cao, tieu luan va tai lieu noi bo (khong push len Git)
 docs/
+docx/
 scratch/
 PRODUCT.md
 

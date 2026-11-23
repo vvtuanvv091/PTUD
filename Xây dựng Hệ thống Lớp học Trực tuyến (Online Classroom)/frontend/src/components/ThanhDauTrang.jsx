@@ -23,7 +23,7 @@ import { DUONG_DAN_TAI_LEN } from '../services/goiApi';
 // Moi muc menu la 1 trang rieng
 const MENU_CONG_KHAI = [
   { to: '/', nhan: 'Trang chủ', end: true },
-  { to: '/khong-gian', nhan: 'Không gian' },
+  { to: '/khong-gian', nhan: 'Vai Trò & Quyền Hạn' },
   { to: '/explore', nhan: 'Khóa học' },
   { to: '/lo-trinh', nhan: 'Lộ trình' },
 ];
@@ -234,7 +234,7 @@ export function ThanhDauTrang({
               {muc.nhan}
             </NavLink>
           ))}
-          <a
+          {/* <a
             href={`${DUONG_DAN_TAI_LEN}/api-docs`}
             target="_blank"
             rel="noreferrer"
@@ -242,7 +242,7 @@ export function ThanhDauTrang({
           >
             <span>API Docs</span>
             <ExternalLink size={12} />
-          </a>
+          </a> */}
         </nav>
 
         <div className="d-flex align-items-center gap-2">

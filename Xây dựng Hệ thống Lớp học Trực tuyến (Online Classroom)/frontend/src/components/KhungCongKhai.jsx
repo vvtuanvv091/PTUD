@@ -13,7 +13,7 @@ export function KhungCongKhai({ children }) {
       <main
         key={pathname}
         className={`flex-grow-1 vao-canh-cong-khai ${laTrangChu ? 'trang-chu-chinh' : 'trang-cong-khai-co-dem'}`}
-        style={!laTrangChu ? { paddingTop: '78px' } : undefined}
+        style={!laTrangChu ? { paddingTop: '10px' } : undefined}
       >
         {children || <Outlet />}
       </main>
