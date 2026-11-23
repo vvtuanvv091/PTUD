@@ -115,13 +115,10 @@ export function TrangKhongGian() {
               <div key={vt.vaiTro} className="col-lg-4 d-flex">
                 <div className="card w-100 border rounded-4 shadow-sm p-4 d-flex flex-column" style={{ background: 'var(--otsp-surface)' }}>
                   <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div
-                      className={`d-inline-flex align-items-center justify-content-center rounded-3 role-icon-${vt.classKey}`}
-                      style={{ width: 48, height: 48 }}
-                    >
+                    <span className={`d-inline-flex align-items-center role-icon-${vt.classKey}`}>
                       <BieuTuong size={26} />
-                    </div>
-                    <span className={`badge rounded-pill px-3 py-2 role-badge-${vt.classKey}`} style={{ fontWeight: 600 }}>
+                    </span>
+                    <span className={`badge rounded-2 px-3 py-1 role-badge-${vt.classKey}`} style={{ fontWeight: 600 }}>
                       {vt.badge}
                     </span>
                   </div>

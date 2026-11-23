@@ -165,13 +165,14 @@ export function TrangThaiTrong({ bieuTuong: BieuTuong, tieuDe, moTa, hanhDong })
         <div
           className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
           style={{
-            width: 56,
-            height: 56,
-            backgroundColor: 'var(--mau-chu-dao-nhat)',
-            color: 'var(--mau-chu-dao)',
+            width: 52,
+            height: 52,
+            backgroundColor: 'transparent',
+            border: '1px solid var(--mau-vien)',
+            color: 'var(--mau-chu-phu)',
           }}
         >
-          <BieuTuong size={24} />
+          <BieuTuong size={22} />
         </div>
       )}
       <h6 className="fw-bold mb-1">{tieuDe}</h6>

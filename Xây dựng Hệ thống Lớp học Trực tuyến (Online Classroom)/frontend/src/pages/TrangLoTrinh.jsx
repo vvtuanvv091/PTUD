@@ -23,32 +23,28 @@ const BON_BUOC_CHUNG = [
     ten: 'Tạo tài khoản & Xác thực',
     moTa: 'Đăng ký vai trò Sinh viên hoặc Giảng viên. Hệ thống mã hóa mật khẩu an toàn bằng bcryptjs và cấp mã JWT Bearer Token đăng nhập.',
     bieuTuong: KeyRound,
-    mauNen: '#eff6ff',
-    mauChu: '#2563eb',
+    mauChu: '#0369a1',
   },
   {
     so: '02',
     ten: 'Ghi danh & Vào lớp',
     moTa: 'Duyệt danh sách khóa học theo chuyên ngành hoặc nhập mã tham gia (Join Code 6 ký tự) do giảng viên cung cấp để vào lớp ngay.',
     bieuTuong: BookOpen,
-    mauNen: '#fef2f2',
-    mauChu: '#dc2626',
+    mauChu: '#b7212b',
   },
   {
     so: '03',
     ten: 'Học liệu & Tiến độ',
     moTa: 'Đọc tài liệu PDF bài giảng trực tiếp, xem video bài học nhúng và bấm "Đánh dấu hoàn thành" để hệ thống tự động tính tỷ lệ % tiến độ.',
     bieuTuong: FileText,
-    mauNen: '#f0fdf4',
-    mauChu: '#16a34a',
+    mauChu: '#15803d',
   },
   {
     so: '04',
     ten: 'Nộp bài & Tổng kết',
     moTa: 'Làm bài tập đúng hạn chót, nộp tệp hoặc văn bản. Giảng viên chấm điểm theo thang 10 kèm nhận xét và xuất bảng điểm CSV mở bằng Excel.',
     bieuTuong: FileSpreadsheet,
-    mauNen: '#fffbeb',
-    mauChu: '#d97706',
+    mauChu: '#b45309',
   },
 ];
 
@@ -191,10 +187,10 @@ export function TrangLoTrinh() {
                   >
                     <div className="d-flex align-items-center justify-content-between mb-3">
                       <span
-                        className="d-inline-flex align-items-center justify-content-center rounded-3"
-                        style={{ width: 44, height: 44, backgroundColor: buoc.mauNen, color: buoc.mauChu }}
+                        className="d-inline-flex align-items-center"
+                        style={{ color: buoc.mauChu }}
                       >
-                        <BieuTuong size={22} />
+                        <BieuTuong size={24} />
                       </span>
                       <span className="h5 fw-bold text-muted mb-0">#{buoc.so}</span>
                     </div>

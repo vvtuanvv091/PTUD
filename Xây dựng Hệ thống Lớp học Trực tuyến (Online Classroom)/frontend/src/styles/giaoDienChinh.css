@@ -7,7 +7,7 @@
 [data-bs-theme="light"] {
   --mau-chu-dao: #db303a;
   --mau-chu-dao-dam: #b7212b;
-  --mau-chu-dao-nhat: #fff0f1;
+  --mau-chu-dao-nhat: #f1f5f9;
   --mau-anh-sang-do: rgba(15, 23, 42, 0.08);
 
   --mau-nen-trang: #f8faf9;
@@ -18,13 +18,13 @@
   --mau-vien: #e2e8f0;
 
   --mau-thanh-cong: #166534;
-  --mau-thanh-cong-nhat: #dcfce7;
+  --mau-thanh-cong-nhat: transparent;
   --mau-canh-bao: #b45309;
-  --mau-canh-bao-nhat: #fef3c7;
+  --mau-canh-bao-nhat: transparent;
   --mau-nguy-hiem: #b91c1c;
-  --mau-nguy-hiem-nhat: #fee2e2;
+  --mau-nguy-hiem-nhat: transparent;
   --mau-thong-tin: #0369a1;
-  --mau-thong-tin-nhat: #e0f2fe;
+  --mau-thong-tin-nhat: transparent;
 
   --do-bong-the: 0 2px 10px rgba(15, 23, 42, 0.045);
   --do-bong-noi: 0 12px 30px rgba(15, 23, 42, 0.1);
@@ -58,7 +58,7 @@
   --cong-khai-vien-manh: rgba(15, 23, 42, 0.08);
   --cong-khai-accent: #db303a;
   --cong-khai-accent-hover: #b7212b;
-  --cong-khai-accent-nhat: #fff0f1;
+  --cong-khai-accent-nhat: #f1f5f9;
   --cong-khai-vang: #d97706;
   --cong-khai-tieu-de: #0f172a;
   --cong-khai-card-bg: #ffffff;
@@ -68,13 +68,13 @@
   --cong-khai-overlay-hero-1: rgba(248, 250, 252, 0.96);
   --cong-khai-overlay-hero-2: rgba(248, 250, 252, 0.86);
   --cong-khai-overlay-hero-3: rgba(248, 250, 252, 0.38);
-  --cong-khai-dong-chay-bg: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  --cong-khai-dong-chay-bg: #f8fafc;
 }
 
 [data-bs-theme="dark"] {
   --mau-chu-dao: #e95760;
   --mau-chu-dao-dam: #ff737b;
-  --mau-chu-dao-nhat: rgba(233, 87, 96, 0.18);
+  --mau-chu-dao-nhat: rgba(255, 255, 255, 0.08);
   --mau-anh-sang-do: rgba(0, 0, 0, 0.35);
 
   --mau-nen-trang: #0f172a;
@@ -85,13 +85,13 @@
   --mau-vien: #2d305d;
 
   --mau-thanh-cong: #4ade80;
-  --mau-thanh-cong-nhat: rgba(22, 101, 52, 0.35);
+  --mau-thanh-cong-nhat: transparent;
   --mau-canh-bao: #fbbf24;
-  --mau-canh-bao-nhat: rgba(217, 119, 6, 0.25);
+  --mau-canh-bao-nhat: transparent;
   --mau-nguy-hiem: #fca5a5;
-  --mau-nguy-hiem-nhat: rgba(239, 68, 68, 0.22);
+  --mau-nguy-hiem-nhat: transparent;
   --mau-thong-tin: #38bdf8;
-  --mau-thong-tin-nhat: rgba(2, 132, 199, 0.22);
+  --mau-thong-tin-nhat: transparent;
 
   --do-bong-the: 0 4px 16px rgba(0, 0, 0, 0.35);
   --do-bong-noi: 0 18px 40px rgba(0, 0, 0, 0.5);
@@ -787,28 +787,29 @@ code {
 }
 
 .hop-bieu-tuong-chi-so {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background-color: transparent !important;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 18px;
+  right: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.hop-mau-do { background-color: #fee2e2; color: #db303a; }
-.hop-mau-xanh { background-color: #dbeafe; color: #0284c7; }
-.hop-mau-vang { background-color: #fef3c7; color: #d97706; }
-.hop-mau-tim { background-color: #f3e8ff; color: #9333ea; }
-.hop-mau-la { background-color: #dcfce7; color: #166534; }
+.hop-mau-do { background-color: transparent; color: #b7212b; }
+.hop-mau-xanh { background-color: transparent; color: #0369a1; }
+.hop-mau-vang { background-color: transparent; color: #b45309; }
+.hop-mau-tim { background-color: transparent; color: #6d28d9; }
+.hop-mau-la { background-color: transparent; color: #15803d; }
 
-[data-bs-theme="dark"] .hop-mau-do { background-color: rgba(219, 48, 58, 0.22); color: #ff8a91; }
-[data-bs-theme="dark"] .hop-mau-xanh { background-color: rgba(2, 132, 199, 0.24); color: #38bdf8; }
-[data-bs-theme="dark"] .hop-mau-vang { background-color: rgba(217, 119, 6, 0.24); color: #fbbf24; }
-[data-bs-theme="dark"] .hop-mau-tim { background-color: rgba(147, 51, 234, 0.24); color: #c084fc; }
-[data-bs-theme="dark"] .hop-mau-la { background-color: rgba(22, 101, 52, 0.3); color: #4ade80; }
+[data-bs-theme="dark"] .hop-mau-do { background-color: transparent; color: #fca5a5; }
+[data-bs-theme="dark"] .hop-mau-xanh { background-color: transparent; color: #38bdf8; }
+[data-bs-theme="dark"] .hop-mau-vang { background-color: transparent; color: #fbbf24; }
+[data-bs-theme="dark"] .hop-mau-tim { background-color: transparent; color: #c4b5fd; }
+[data-bs-theme="dark"] .hop-mau-la { background-color: transparent; color: #4ade80; }
 
 .the-bang-dieu-khien {
   background-color: var(--mau-be-mat);
@@ -951,20 +952,22 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.24rem 0.65rem;
-  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
   font-size: 0.76rem;
   font-weight: 600;
   line-height: 1.25;
   white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid var(--mau-vien);
 }
 
-.nhan-thanh-cong { background-color: var(--mau-thanh-cong-nhat); color: var(--mau-thanh-cong); }
-.nhan-canh-bao { background-color: var(--mau-canh-bao-nhat); color: var(--mau-canh-bao); }
-.nhan-nguy-hiem { background-color: var(--mau-nguy-hiem-nhat); color: var(--mau-nguy-hiem); }
-.nhan-thong-tin { background-color: var(--mau-thong-tin-nhat); color: var(--mau-thong-tin); }
-.nhan-trung-tinh { background-color: var(--mau-be-mat-phu); color: var(--mau-chu-phu); }
-.nhan-chu-dao { background-color: var(--mau-chu-dao-nhat); color: var(--mau-chu-dao-dam); }
+.nhan-thanh-cong { background-color: transparent; border-color: #16a34a; color: var(--mau-thanh-cong); }
+.nhan-canh-bao { background-color: transparent; border-color: #d97706; color: var(--mau-canh-bao); }
+.nhan-nguy-hiem { background-color: transparent; border-color: #dc2626; color: var(--mau-nguy-hiem); }
+.nhan-thong-tin { background-color: transparent; border-color: #0284c7; color: var(--mau-thong-tin); }
+.nhan-trung-tinh { background-color: transparent; border-color: var(--mau-vien); color: var(--mau-chu-phu); }
+.nhan-chu-dao { background-color: transparent; border-color: var(--mau-chu-dao); color: var(--mau-chu-dao-dam); }
 
 .anh-dai-dien {
   border-radius: 50%;
@@ -1631,17 +1634,15 @@ code {
 
 .khung-ket-dien-anh {
   padding: 3rem 2.5rem;
-  border-radius: 6px;
-  background:
-    radial-gradient(circle at 88% 20%, rgba(219, 48, 58, 0.22), transparent 52%),
-    linear-gradient(120deg, var(--cong-khai-card-bg) 0%, var(--cong-khai-nen-section) 100%);
+  border-radius: 8px;
+  background: var(--cong-khai-card-bg);
   border: 1px solid var(--cong-khai-vien);
 }
 
 [data-bs-theme="light"] .khung-ket-dien-anh {
-  background: linear-gradient(120deg, #fff0f1 0%, #ffffff 100%);
-  border-color: #fecdd3;
-  box-shadow: 0 8px 30px rgba(219, 48, 58, 0.08);
+  background: #ffffff;
+  border-color: var(--cong-khai-vien);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
 }
 
 [data-bs-theme="light"] .khung-ket-dien-anh h3 {
@@ -2328,7 +2329,7 @@ code {
   --otsp-text-muted: #52606d;
   --otsp-primary: #b7212b;
   --otsp-primary-hover: #991b1b;
-  --otsp-primary-light: #fff0f1;
+  --otsp-primary-light: #f1f5f9;
   --otsp-primary-glow: rgba(15, 23, 42, 0.08);
   --otsp-card-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
   --otsp-card-hover-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
@@ -2672,7 +2673,7 @@ code {
 }
 
 .why-us .why-box .more-btn:hover {
-  background: #fff0f1;
+  background: #f1f5f9;
   transform: translateX(4px);
 }
 
@@ -3125,32 +3126,79 @@ h1, h2, h3, h4, h5, h6,
   text-wrap: balance;
 }
 
-[data-bs-theme="dark"] .bg-danger-subtle {
-  background-color: rgba(220, 38, 38, 0.22) !important;
+.bg-danger-subtle,
+.bg-success-subtle,
+.bg-primary-subtle,
+.bg-warning-subtle,
+.bg-info-subtle {
+  background-color: transparent !important;
 }
-[data-bs-theme="dark"] .text-danger {
+
+.badge.bg-danger-subtle {
+  border: 1px solid #dc2626 !important;
+  color: #b91c1c !important;
+}
+
+.badge.bg-success-subtle {
+  border: 1px solid #16a34a !important;
+  color: #166534 !important;
+}
+
+.badge.bg-primary-subtle {
+  border: 1px solid #0284c7 !important;
+  color: #0369a1 !important;
+}
+
+.badge.bg-warning-subtle {
+  border: 1px solid #d97706 !important;
+  color: #b45309 !important;
+}
+
+.badge.bg-info-subtle {
+  border: 1px solid #0284c7 !important;
+  color: #0369a1 !important;
+}
+
+[data-bs-theme="dark"] .bg-danger-subtle,
+[data-bs-theme="dark"] .bg-success-subtle,
+[data-bs-theme="dark"] .bg-primary-subtle,
+[data-bs-theme="dark"] .bg-warning-subtle,
+[data-bs-theme="dark"] .bg-info-subtle {
+  background-color: transparent !important;
+}
+
+[data-bs-theme="dark"] .text-danger,
+[data-bs-theme="dark"] .badge.bg-danger-subtle {
   color: #fca5a5 !important;
 }
-
-[data-bs-theme="dark"] .bg-success-subtle {
-  background-color: rgba(22, 163, 74, 0.22) !important;
+[data-bs-theme="dark"] .badge.bg-danger-subtle {
+  border-color: rgba(248, 113, 113, 0.55) !important;
 }
-[data-bs-theme="dark"] .text-success {
+
+[data-bs-theme="dark"] .text-success,
+[data-bs-theme="dark"] .badge.bg-success-subtle {
   color: #86efac !important;
 }
-
-[data-bs-theme="dark"] .bg-primary-subtle {
-  background-color: rgba(14, 165, 233, 0.22) !important;
+[data-bs-theme="dark"] .badge.bg-success-subtle {
+  border-color: rgba(74, 222, 128, 0.55) !important;
 }
-[data-bs-theme="dark"] .text-primary {
+
+[data-bs-theme="dark"] .text-primary,
+[data-bs-theme="dark"] .badge.bg-primary-subtle,
+[data-bs-theme="dark"] .badge.bg-info-subtle {
   color: #7dd3fc !important;
 }
-
-[data-bs-theme="dark"] .bg-warning-subtle {
-  background-color: rgba(217, 119, 6, 0.25) !important;
+[data-bs-theme="dark"] .badge.bg-primary-subtle,
+[data-bs-theme="dark"] .badge.bg-info-subtle {
+  border-color: rgba(56, 189, 248, 0.55) !important;
 }
-[data-bs-theme="dark"] .text-warning {
+
+[data-bs-theme="dark"] .text-warning,
+[data-bs-theme="dark"] .badge.bg-warning-subtle {
   color: #fde047 !important;
+}
+[data-bs-theme="dark"] .badge.bg-warning-subtle {
+  border-color: rgba(251, 191, 36, 0.55) !important;
 }
 
 [data-bs-theme="dark"] .text-muted,
@@ -3179,35 +3227,35 @@ h1, h2, h3, h4, h5, h6,
 }
 
 [data-bs-theme="dark"] .badge.bg-light-subtle {
-  background-color: #1e293b !important;
+  background-color: transparent !important;
   color: #cbd5e1 !important;
   border-color: #334155 !important;
 }
 
 /* Role spaces theme colors (Trang Không Gian) */
-.role-icon-student { background-color: #e0f2fe; color: #0369a1; }
-.role-badge-student { background-color: #e0f2fe; color: #0369a1; }
+.role-icon-student { background-color: transparent; color: #0369a1; }
+.role-badge-student { background-color: transparent; border: 1px solid #0369a1; color: #0369a1; }
 .role-text-student { color: #0369a1; }
 .role-btn-student { background-color: #0369a1; color: #ffffff !important; }
 
-[data-bs-theme="dark"] .role-icon-student { background-color: rgba(56, 189, 248, 0.16); color: #38bdf8; }
-[data-bs-theme="dark"] .role-badge-student { background-color: rgba(56, 189, 248, 0.16); color: #38bdf8; }
+[data-bs-theme="dark"] .role-icon-student { background-color: transparent; color: #38bdf8; }
+[data-bs-theme="dark"] .role-badge-student { background-color: transparent; border: 1px solid rgba(56, 189, 248, 0.55); color: #38bdf8; }
 [data-bs-theme="dark"] .role-text-student { color: #38bdf8; }
 
-.role-icon-teacher { background-color: #fef2f2; color: #b7212b; }
-.role-badge-teacher { background-color: #fef2f2; color: #b7212b; }
+.role-icon-teacher { background-color: transparent; color: #b7212b; }
+.role-badge-teacher { background-color: transparent; border: 1px solid #b7212b; color: #b7212b; }
 .role-text-teacher { color: #b7212b; }
 .role-btn-teacher { background-color: #b7212b; color: #ffffff !important; }
 
-[data-bs-theme="dark"] .role-icon-teacher { background-color: rgba(248, 113, 113, 0.16); color: #fca5a5; }
-[data-bs-theme="dark"] .role-badge-teacher { background-color: rgba(248, 113, 113, 0.16); color: #fca5a5; }
+[data-bs-theme="dark"] .role-icon-teacher { background-color: transparent; color: #fca5a5; }
+[data-bs-theme="dark"] .role-badge-teacher { background-color: transparent; border: 1px solid rgba(252, 165, 165, 0.55); color: #fca5a5; }
 [data-bs-theme="dark"] .role-text-teacher { color: #fca5a5; }
 
-.role-icon-admin { background-color: #ecfdf5; color: #047857; }
-.role-badge-admin { background-color: #ecfdf5; color: #047857; }
+.role-icon-admin { background-color: transparent; color: #047857; }
+.role-badge-admin { background-color: transparent; border: 1px solid #047857; color: #047857; }
 .role-text-admin { color: #047857; }
 .role-btn-admin { background-color: #047857; color: #ffffff !important; }
 
-[data-bs-theme="dark"] .role-icon-admin { background-color: rgba(52, 211, 153, 0.16); color: #34d399; }
-[data-bs-theme="dark"] .role-badge-admin { background-color: rgba(52, 211, 153, 0.16); color: #34d399; }
+[data-bs-theme="dark"] .role-icon-admin { background-color: transparent; color: #34d399; }
+[data-bs-theme="dark"] .role-badge-admin { background-color: transparent; border: 1px solid rgba(52, 211, 153, 0.55); color: #34d399; }
 [data-bs-theme="dark"] .role-text-admin { color: #34d399; }

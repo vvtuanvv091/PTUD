@@ -349,12 +349,11 @@ export function TrangChu() {
               return (
                 <div key={dm.ten} className="col-lg-3 col-md-4 col-sm-6">
                   <div className="features-item">
-                    <div
-                      className="icon-category-box me-3 flex-shrink-0"
-                      style={{ color, backgroundColor: `${color}18` }}
-                    >
-                      <IconComp size={24} />
-                    </div>
+                    <IconComp
+                      size={22}
+                      className="me-3 flex-shrink-0"
+                      style={{ color }}
+                    />
                     <div className="min-w-0">
                       <h3 className="text-truncate">
                         <Link to={`/explore?category=${encodeURIComponent(dm.ten)}`} className="stretched-link">
