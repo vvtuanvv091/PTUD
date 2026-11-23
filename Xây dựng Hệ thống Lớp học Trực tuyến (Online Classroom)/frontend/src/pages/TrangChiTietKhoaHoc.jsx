@@ -40,17 +40,25 @@ export function TrangChiTietKhoaHoc() {
 
   const taiKhongGianLop = useCallback(async () => {
     try {
-      const [resLop, resTl, resBt, resTb] = await Promise.all([
+      const [resLop, resTl, resBt] = await Promise.all([
         goiApi.get(`/courses/${id}`),
         goiApi.get(`/courses/${id}/materials`),
         goiApi.get(`/courses/${id}/assignments`),
-        goiApi.get(`/courses/${id}/announcements`).catch(() => ({ data: { data: [] } })),
       ]);
-      datKhoaHoc(resLop.data.data);
+      const dlLop = resLop.data.data;
+      datKhoaHoc(dlLop);
       datDsTaiLieu(resTl.data.data);
       datThongTinTaiLieu(resTl.data.meta);
       datDsBaiTap(resBt.data.data);
-      datDsThongBao(resTb.data.data || []);
+
+      if (dlLop?.isOwner || dlLop?.isEnrolled) {
+        const resTb = await goiApi
+          .get(`/courses/${id}/announcements`)
+          .catch(() => ({ data: { data: [] } }));
+        datDsThongBao(resTb.data.data || []);
+      } else {
+        datDsThongBao([]);
+      }
     } catch (err) {
       thongBao.loi(layThongBaoLoi(err, 'Không thể tải không gian lớp học'));
     } finally {

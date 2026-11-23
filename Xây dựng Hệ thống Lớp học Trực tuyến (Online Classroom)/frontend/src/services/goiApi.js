@@ -25,7 +25,13 @@ goiApi.interceptors.response.use(
     const maTrangThai = loi.response?.status;
     const thongDiep = loi.response?.data?.message || '';
 
-    if (maTrangThai === 401 || (maTrangThai === 403 && thongDiep.includes('khóa'))) {
+    const thongDiepThuong = thongDiep.toLowerCase();
+    const laTaiKhoanBiKhoa =
+      maTrangThai === 403 &&
+      thongDiepThuong.includes('tài khoản') &&
+      thongDiepThuong.includes('khóa');
+
+    if (maTrangThai === 401 || laTaiKhoanBiKhoa) {
       const duongDanHienTai = window.location.pathname;
       if (!['/login', '/register'].includes(duongDanHienTai)) {
         localStorage.removeItem('educlass_token');
