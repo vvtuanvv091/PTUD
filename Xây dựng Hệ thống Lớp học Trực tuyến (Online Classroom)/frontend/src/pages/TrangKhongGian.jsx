@@ -15,11 +15,10 @@ import { suDungXacThuc } from '../context/NguCanhXacThuc';
 const DANH_SACH_VAI_TRO = [
   {
     vaiTro: 'student',
+    classKey: 'student',
     ten: 'Sinh viên',
     tieuDe: 'Chủ động học tập & theo dõi tiến độ',
     bieuTuong: GraduationCap,
-    mauNen: 'rgba(2, 132, 199, 0.1)',
-    mauChu: '#0284c7',
     badge: 'Học viên',
     moTa: 'Dành cho sinh viên tham gia các lớp học tín chỉ, truy cập kho học liệu số, làm bài tập và nhận đánh giá từ giảng viên.',
     quyenHan: [
@@ -34,11 +33,10 @@ const DANH_SACH_VAI_TRO = [
   },
   {
     vaiTro: 'teacher',
+    classKey: 'teacher',
     ten: 'Giảng viên',
     tieuDe: 'Quản trị lớp học & Đánh giá học tập',
     bieuTuong: BookOpen,
-    mauNen: 'rgba(219, 48, 58, 0.1)',
-    mauChu: '#db303a',
     badge: 'Phụ trách môn',
     moTa: 'Dành cho giảng viên mở lớp, phân phối học liệu số hóa, giao bài tập định kỳ, chấm bài và quản lý bảng điểm toàn diện.',
     quyenHan: [
@@ -53,11 +51,10 @@ const DANH_SACH_VAI_TRO = [
   },
   {
     vaiTro: 'admin',
+    classKey: 'admin',
     ten: 'Quản trị viên',
     tieuDe: 'Điều hành & Giám sát toàn hệ thống',
     bieuTuong: Shield,
-    mauNen: 'rgba(22, 101, 52, 0.1)',
-    mauChu: '#166534',
     badge: 'Quản trị cấp cao',
     moTa: 'Dành cho ban quản trị nhà trường theo dõi toàn bộ hoạt động đào tạo, quản lý tài khoản người dùng và duy trì dữ liệu hệ thống.',
     quyenHan: [
@@ -98,9 +95,6 @@ export function TrangKhongGian() {
       <div className="container">
         {/* Tiêu đề trang */}
         <div className="text-center mb-5">
-          <span className="badge bg-danger-subtle text-danger fw-semibold px-3 py-2 rounded-pill mb-2">
-            MÔ HÌNH PHÂN QUYỀN RBAC
-          </span>
           <h1 className="fw-bold mb-3" style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}>
             Không Gian Vai Trò
           </h1>
@@ -112,7 +106,9 @@ export function TrangKhongGian() {
         </div>
 
         {/* 3 Thẻ vai trò */}
-        <div className="row gy-4 mb-5">
+        <div className="mb-5">
+          <h2 className="h4 fw-bold mb-4">3 Nhóm Vai Trò Trong Hệ Thống</h2>
+          <div className="row gy-4">
           {DANH_SACH_VAI_TRO.map((vt) => {
             const BieuTuong = vt.bieuTuong;
             return (
@@ -120,18 +116,18 @@ export function TrangKhongGian() {
                 <div className="card w-100 border rounded-4 shadow-sm p-4 d-flex flex-column" style={{ background: 'var(--otsp-surface)' }}>
                   <div className="d-flex align-items-center justify-content-between mb-3">
                     <div
-                      className="d-inline-flex align-items-center justify-content-center rounded-3"
-                      style={{ width: 48, height: 48, backgroundColor: vt.mauNen, color: vt.mauChu }}
+                      className={`d-inline-flex align-items-center justify-content-center rounded-3 role-icon-${vt.classKey}`}
+                      style={{ width: 48, height: 48 }}
                     >
                       <BieuTuong size={26} />
                     </div>
-                    <span className="badge rounded-pill px-3 py-2" style={{ backgroundColor: vt.mauNen, color: vt.mauChu, fontWeight: 600 }}>
+                    <span className={`badge rounded-pill px-3 py-2 role-badge-${vt.classKey}`} style={{ fontWeight: 600 }}>
                       {vt.badge}
                     </span>
                   </div>
 
                   <h3 className="h4 fw-bold mb-1">{vt.ten}</h3>
-                  <div className="small fw-semibold mb-2" style={{ color: vt.mauChu }}>
+                  <div className={`small fw-semibold mb-2 role-text-${vt.classKey}`}>
                     {vt.tieuDe}
                   </div>
                   <p className="text-muted small mb-4">{vt.moTa}</p>
@@ -151,12 +147,7 @@ export function TrangKhongGian() {
                   <div className="pt-3 border-top mt-auto">
                     <Link
                       to={daDangNhap ? '/dashboard' : vt.duongDan}
-                      className="btn w-100 fw-semibold d-flex align-items-center justify-content-center gap-2 py-2 rounded-3"
-                      style={{
-                        backgroundColor: vt.mauChu,
-                        color: '#ffffff',
-                        border: 'none',
-                      }}
+                      className={`btn w-100 fw-semibold d-flex align-items-center justify-content-center gap-2 py-2 rounded-3 border-0 role-btn-${vt.classKey}`}
                     >
                       <span>{daDangNhap ? 'Vào bảng điều khiển' : vt.nutHanhDong}</span>
                       <ArrowRight size={16} />
@@ -166,6 +157,7 @@ export function TrangKhongGian() {
               </div>
             );
           })}
+          </div>
         </div>
 
         {/* Ma trận phân quyền */}
@@ -178,7 +170,7 @@ export function TrangKhongGian() {
           </div>
 
           <div className="table-responsive">
-            <table className="table table-hover align-middle mb-0">
+            <table className="table table-hover align-middle mb-0" style={{ fontSize: '0.875rem' }}>
               <thead className="table-light">
                 <tr>
                   <th style={{ width: '46%' }}>Chức năng nghiệp vụ</th>
@@ -190,32 +182,32 @@ export function TrangKhongGian() {
               <tbody>
                 {MA_TRAN_PHAN_QUYEN.map((row, idx) => (
                   <tr key={idx}>
-                    <td className="fw-medium small">{row.chucNang}</td>
+                    <td className="fw-medium">{row.chucNang}</td>
                     <td className="text-center">
                       {row.sv === 'Có' ? (
-                        <span className="badge bg-success-subtle text-success px-2 py-1">Có</span>
+                        <span className="badge bg-success-subtle text-success px-2 py-1" style={{ fontSize: '0.8rem' }}>Có</span>
                       ) : row.sv === '-' ? (
                         <span className="text-muted">-</span>
                       ) : (
-                        <span className="badge bg-light text-secondary border px-2 py-1">{row.sv}</span>
+                        <span className="badge bg-light-subtle text-secondary border px-2 py-1" style={{ fontSize: '0.8rem' }}>{row.sv}</span>
                       )}
                     </td>
                     <td className="text-center">
                       {row.gv === 'Có' ? (
-                        <span className="badge bg-danger-subtle text-danger px-2 py-1">Có</span>
+                        <span className="badge bg-danger-subtle text-danger px-2 py-1" style={{ fontSize: '0.8rem' }}>Có</span>
                       ) : row.gv === '-' ? (
                         <span className="text-muted">-</span>
                       ) : (
-                        <span className="badge bg-light text-secondary border px-2 py-1">{row.gv}</span>
+                        <span className="badge bg-light-subtle text-secondary border px-2 py-1" style={{ fontSize: '0.8rem' }}>{row.gv}</span>
                       )}
                     </td>
                     <td className="text-center">
                       {row.ad === 'Có' || row.ad === 'Toàn hệ thống' || row.ad === 'Toàn quyền' ? (
-                        <span className="badge bg-primary-subtle text-primary px-2 py-1">{row.ad}</span>
+                        <span className="badge bg-primary-subtle text-primary px-2 py-1" style={{ fontSize: '0.8rem' }}>{row.ad}</span>
                       ) : row.ad === '-' ? (
                         <span className="text-muted">-</span>
                       ) : (
-                        <span className="badge bg-light text-secondary border px-2 py-1">{row.ad}</span>
+                        <span className="badge bg-light-subtle text-secondary border px-2 py-1" style={{ fontSize: '0.8rem' }}>{row.ad}</span>
                       )}
                     </td>
                   </tr>

@@ -168,9 +168,6 @@ export function TrangLoTrinh() {
       <div className="container">
         {/* Tiêu đề trang */}
         <div className="text-center mb-5">
-          <span className="badge bg-danger-subtle text-danger fw-semibold px-3 py-2 rounded-pill mb-2">
-            QUY TRÌNH HỌC TẬP CHUẨN
-          </span>
           <h1 className="fw-bold mb-3" style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}>
             Lộ Trình Học Tập
           </h1>
@@ -181,36 +178,39 @@ export function TrangLoTrinh() {
         </div>
 
         {/* 4 Bước chung */}
-        <div className="row gy-4 mb-5">
-          {BON_BUOC_CHUNG.map((buoc) => {
-            const BieuTuong = buoc.bieuTuong;
-            return (
-              <div key={buoc.so} className="col-lg-3 col-md-6 d-flex">
-                <div
-                  className="card w-100 border rounded-4 shadow-sm p-4 d-flex flex-column"
-                  style={{ background: 'var(--otsp-surface)' }}
-                >
-                  <div className="d-flex align-items-center justify-content-between mb-3">
-                    <span
-                      className="d-inline-flex align-items-center justify-content-center rounded-3"
-                      style={{ width: 44, height: 44, backgroundColor: buoc.mauNen, color: buoc.mauChu }}
-                    >
-                      <BieuTuong size={22} />
-                    </span>
-                    <span className="h5 fw-bold text-muted mb-0">#{buoc.so}</span>
+        <div className="mb-5">
+          <h2 className="h4 fw-bold mb-4">4 Bước Học Tập Cốt Lõi</h2>
+          <div className="row gy-4">
+            {BON_BUOC_CHUNG.map((buoc) => {
+              const BieuTuong = buoc.bieuTuong;
+              return (
+                <div key={buoc.so} className="col-lg-3 col-md-6 d-flex">
+                  <div
+                    className="card w-100 border rounded-4 shadow-sm p-4 d-flex flex-column"
+                    style={{ background: 'var(--otsp-surface)' }}
+                  >
+                    <div className="d-flex align-items-center justify-content-between mb-3">
+                      <span
+                        className="d-inline-flex align-items-center justify-content-center rounded-3"
+                        style={{ width: 44, height: 44, backgroundColor: buoc.mauNen, color: buoc.mauChu }}
+                      >
+                        <BieuTuong size={22} />
+                      </span>
+                      <span className="h5 fw-bold text-muted mb-0">#{buoc.so}</span>
+                    </div>
+                    <h3 className="h6 fw-bold mb-2">{buoc.ten}</h3>
+                    <p className="text-muted small mb-0 flex-grow-1" style={{ lineHeight: 1.6 }}>
+                      {buoc.moTa}
+                    </p>
                   </div>
-                  <h3 className="h6 fw-bold mb-2">{buoc.ten}</h3>
-                  <p className="text-muted small mb-0 flex-grow-1" style={{ lineHeight: 1.6 }}>
-                    {buoc.moTa}
-                  </p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
         {/* Luồng chi tiết theo vai trò */}
-        <div className="card border rounded-4 shadow-sm p-4 p-lg-5 mb-5" style={{ background: 'var(--otsp-surface)' }}>
+        <section className="mb-5">
           <div className="text-center mb-4">
             <h2 className="h4 fw-bold mb-2">Quy Trình Nghiệp Vụ Chi Tiết</h2>
             <p className="text-muted small mb-4">
@@ -218,24 +218,24 @@ export function TrangLoTrinh() {
             </p>
 
             {/* Pills chọn vai trò */}
-            <div className="d-inline-flex p-1 rounded-pill border bg-light gap-1">
+            <div className="d-inline-flex p-1 rounded-pill border bg-body-tertiary gap-1">
               <button
                 type="button"
-                className={`btn btn-sm rounded-pill px-4 py-2 fw-semibold ${vaiTroChon === 'student' ? 'btn-danger shadow-sm' : 'btn-light text-secondary'}`}
+                className={`btn btn-sm rounded-pill px-4 py-2 fw-semibold border-0 ${vaiTroChon === 'student' ? 'btn-danger shadow-sm' : 'text-body-secondary'}`}
                 onClick={() => datVaiTroChon('student')}
               >
                 Sinh viên
               </button>
               <button
                 type="button"
-                className={`btn btn-sm rounded-pill px-4 py-2 fw-semibold ${vaiTroChon === 'teacher' ? 'btn-danger shadow-sm' : 'btn-light text-secondary'}`}
+                className={`btn btn-sm rounded-pill px-4 py-2 fw-semibold border-0 ${vaiTroChon === 'teacher' ? 'btn-danger shadow-sm' : 'text-body-secondary'}`}
                 onClick={() => datVaiTroChon('teacher')}
               >
                 Giảng viên
               </button>
               <button
                 type="button"
-                className={`btn btn-sm rounded-pill px-4 py-2 fw-semibold ${vaiTroChon === 'admin' ? 'btn-danger shadow-sm' : 'btn-light text-secondary'}`}
+                className={`btn btn-sm rounded-pill px-4 py-2 fw-semibold border-0 ${vaiTroChon === 'admin' ? 'btn-danger shadow-sm' : 'text-body-secondary'}`}
                 onClick={() => datVaiTroChon('admin')}
               >
                 Quản trị viên
@@ -243,8 +243,8 @@ export function TrangLoTrinh() {
             </div>
           </div>
 
-          <div className="p-3 bg-light rounded-3 mb-4 text-center">
-            <span className="fw-bold text-dark">{luongHienTai.ten}: </span>
+          <div className="p-3 bg-light-subtle rounded-3 mb-4 text-center border">
+            <span className="fw-bold text-body">{luongHienTai.ten}: </span>
             <span className="text-muted small">{luongHienTai.moTa}</span>
           </div>
 
@@ -252,7 +252,10 @@ export function TrangLoTrinh() {
           <div className="row gy-3">
             {luongHienTai.buoc.map((b) => (
               <div key={b.buocSo} className="col-12">
-                <div className="p-3 rounded-3 border d-flex flex-column flex-md-row align-items-start gap-3 bg-white">
+                <div
+                  className="p-3 rounded-3 border d-flex flex-column flex-md-row align-items-start gap-3 shadow-sm"
+                  style={{ background: 'var(--otsp-surface)' }}
+                >
                   <div
                     className="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0 fw-bold bg-danger text-white"
                     style={{ width: 36, height: 36, fontSize: '0.95rem' }}
@@ -260,7 +263,7 @@ export function TrangLoTrinh() {
                     {b.buocSo}
                   </div>
                   <div className="flex-grow-1 min-w-0">
-                    <h4 className="h6 fw-bold mb-1">{b.tieuDe}</h4>
+                    <h3 className="h6 fw-bold mb-1">{b.tieuDe}</h3>
                     <p className="text-muted small mb-2">{b.noiDung}</p>
                     <div className="d-flex flex-wrap gap-2">
                       {b.apis.map((api, i) => (
@@ -274,7 +277,7 @@ export function TrangLoTrinh() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Khối tài khoản thử nghiệm */}
         <div className="card rounded-4 border p-4 p-lg-5" style={{ background: 'var(--otsp-surface-subtle)' }}>

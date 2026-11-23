@@ -20,12 +20,6 @@ export function BannerTrangCongKhai({ nhan, dongPhu, tieuDe, moTa, children }) {
           </ol>
         </nav>
 
-        {dongPhu && (
-          <span className="badge bg-danger-subtle text-danger fw-semibold px-3 py-1 rounded-pill mb-2" style={{ fontSize: '0.78rem' }}>
-            {dongPhu}
-          </span>
-        )}
-
         <h1 className="fw-bold mb-2" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--otsp-text-main)' }}>
           {tieuDe}
         </h1>

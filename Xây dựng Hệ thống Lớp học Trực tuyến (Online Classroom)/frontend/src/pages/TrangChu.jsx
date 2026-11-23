@@ -136,20 +136,15 @@ export function TrangChu() {
         />
         <div className="container">
           <div className="otsp-hero-content">
-            <div className="otsp-badge-glow mb-2">
-              <Sparkles size={14} />
-              <span>HỆ THỐNG LỚP HỌC TRỰC TUYẾN • MERN STACK</span>
-            </div>
-
             <h1 className="otsp-hero-title">
               Nơi tri thức hội tụ,<br />
-              <span className="otsp-text-gradient">vững bước tương lai.</span>
+              <span className="otsp-hero-highlight">vững bước tương lai.</span>
             </h1>
 
             <p>
               Nền tảng lớp học trực tuyến EduClass số hóa toàn diện quy trình giảng dạy và học tập.
               Giảng viên mở lớp và phân phối học liệu PDF &amp; Video; Sinh viên ghi danh, làm bài tập
-              và theo dõi tiến độ học tập minh bạch.
+              và theo dõi tiến độ học tập&nbsp;minh&nbsp;bạch.
             </p>
 
             <div className="otsp-hero-actions">
@@ -199,8 +194,7 @@ export function TrangChu() {
             </div>
 
             <div className="col-lg-6 order-2 order-lg-1 content">
-              <span className="nhan-nho-otsp d-inline-block mb-2">VỀ HỆ THỐNG EDUCLASS</span>
-              <h3>Nền tảng Lớp học Trực tuyến Chuẩn hóa &amp; Toàn diện</h3>
+              <h2 className="fw-bold mb-3">Nền tảng Lớp học Trực tuyến Chuẩn hóa &amp; Toàn diện</h2>
               <p className="fst-italic text-muted">
                 EduClass xây dựng không gian học thuật số hóa chuyên nghiệp, kết nối chặt chẽ giữa
                 Giảng viên, Sinh viên và Quản trị viên nhà trường trên cùng một hệ thống duy nhất.
@@ -239,47 +233,47 @@ export function TrangChu() {
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-3 col-md-6">
-              <div className="stats-card">
-                <div className="stats-icon-wrap">
-                  <Users size={26} />
+              <div className="stats-card d-flex align-items-center gap-3">
+                <Users size={32} className="text-danger flex-shrink-0" />
+                <div>
+                  <div className="stats-number">
+                    <DemSoDong giaTriMucTieu={counts.studentCount || 5} />
+                  </div>
+                  <div className="stats-label">Sinh viên đang học</div>
                 </div>
-                <span className="stats-number">
-                  <DemSoDong giaTriMucTieu={counts.studentCount || 5} />
-                </span>
-                <p>Sinh viên đang học</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="stats-card">
-                <div className="stats-icon-wrap">
-                  <BookOpen size={26} />
+              <div className="stats-card d-flex align-items-center gap-3">
+                <BookOpen size={32} className="text-danger flex-shrink-0" />
+                <div>
+                  <div className="stats-number">
+                    <DemSoDong giaTriMucTieu={counts.courseCount || 6} />
+                  </div>
+                  <div className="stats-label">Lớp học đang mở</div>
                 </div>
-                <span className="stats-number">
-                  <DemSoDong giaTriMucTieu={counts.courseCount || 6} />
-                </span>
-                <p>Lớp học đang mở</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="stats-card">
-                <div className="stats-icon-wrap">
-                  <FileText size={26} />
+              <div className="stats-card d-flex align-items-center gap-3">
+                <FileText size={32} className="text-danger flex-shrink-0" />
+                <div>
+                  <div className="stats-number">
+                    <DemSoDong giaTriMucTieu={counts.materialCount || 12} />
+                  </div>
+                  <div className="stats-label">Học liệu PDF &amp; Video</div>
                 </div>
-                <span className="stats-number">
-                  <DemSoDong giaTriMucTieu={counts.materialCount || 12} />
-                </span>
-                <p>Học liệu PDF &amp; Video</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="stats-card">
-                <div className="stats-icon-wrap">
-                  <GraduationCap size={26} />
+              <div className="stats-card d-flex align-items-center gap-3">
+                <GraduationCap size={32} className="text-danger flex-shrink-0" />
+                <div>
+                  <div className="stats-number">
+                    <DemSoDong giaTriMucTieu={counts.teacherCount || 3} />
+                  </div>
+                  <div className="stats-label">Giảng viên phụ trách</div>
                 </div>
-                <span className="stats-number">
-                  <DemSoDong giaTriMucTieu={counts.teacherCount || 3} />
-                </span>
-                <p>Giảng viên phụ trách</p>
               </div>
             </div>
           </div>
@@ -293,8 +287,9 @@ export function TrangChu() {
             <div className="col-lg-4">
               <div className="why-box">
                 <div>
-                  <span className="nhan-trang-nho d-inline-block mb-2">ƯU ĐIỂM VƯỢT TRỘI</span>
-                  <h3>Vì sao giảng viên &amp; sinh viên tin chọn EduClass?</h3>
+                  <h2 className="text-white fw-bold mb-3" style={{ fontSize: 'clamp(22px, 2.8vw, 28px)', lineHeight: 1.25 }}>
+                    Vì sao giảng viên &amp; sinh viên tin chọn EduClass?
+                  </h2>
                   <p>
                     EduClass số hóa toàn bộ trải nghiệm lớp học: từ tạo lớp, đăng tải học liệu,
                     giao nộp bài tập đến chấm điểm và xếp loại học lực, đáp ứng chặt chẽ yêu cầu
@@ -314,28 +309,22 @@ export function TrangChu() {
               <div className="row gy-4 w-100">
                 <div className="col-xl-4 col-md-4">
                   <div className="icon-box">
-                    <div className="stats-icon-wrap mb-3">
-                      <ShieldCheck size={26} />
-                    </div>
-                    <h4>Giảng viên chọn lọc</h4>
+                    <ShieldCheck size={28} className="text-danger mb-3" />
+                    <h3>Giảng viên chọn lọc</h3>
                     <p>Đội ngũ giảng viên trình độ cao, giáo trình chuẩn hóa và bài giảng cập nhật liên tục.</p>
                   </div>
                 </div>
                 <div className="col-xl-4 col-md-4">
                   <div className="icon-box">
-                    <div className="stats-icon-wrap mb-3">
-                      <BookOpen size={26} />
-                    </div>
-                    <h4>Học tập linh hoạt</h4>
+                    <BookOpen size={28} className="text-danger mb-3" />
+                    <h3>Học tập linh hoạt</h3>
                     <p>Chủ động học mọi lúc mọi nơi qua tài liệu PDF, video bài giảng và thảo luận trực tiếp.</p>
                   </div>
                 </div>
                 <div className="col-xl-4 col-md-4">
                   <div className="icon-box">
-                    <div className="stats-icon-wrap mb-3">
-                      <Award size={26} />
-                    </div>
-                    <h4>Đánh giá minh bạch</h4>
+                    <Award size={28} className="text-danger mb-3" />
+                    <h3>Đánh giá minh bạch</h3>
                     <p>Chấm bài tập theo thang điểm 10, nhận xét chi tiết và xuất báo cáo điểm số chuẩn xác.</p>
                   </div>
                 </div>
@@ -477,7 +466,7 @@ export function TrangChu() {
                       />
                     </div>
                     <div className="member-content">
-                      <h4>{tenGv}</h4>
+                      <h3 className="h5 fw-bold mb-1">{tenGv}</h3>
                       <span>{hocVi}</span>
                       <p>{moTa}</p>
                       <div className="mt-3 pt-2 border-top">
@@ -500,10 +489,6 @@ export function TrangChu() {
           <div className="cta-card p-4 p-lg-5 rounded-4 shadow-sm">
             <div className="row align-items-center gy-4">
               <div className="col-lg-8">
-                <div className="otsp-badge-glow mb-2">
-                  <CheckCircle2 size={14} />
-                  <span>SẴN SÀNG TRẢI NGHIỆM</span>
-                </div>
                 <h2 className="fw-bold mb-2" style={{ color: 'var(--otsp-text-main)' }}>
                   Trải nghiệm hệ thống ngay hôm nay
                 </h2>
