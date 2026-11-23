@@ -4,7 +4,8 @@ import { UserPlus } from 'lucide-react';
 import { suDungXacThuc } from '../context/NguCanhXacThuc';
 import { suDungThongBao } from '../context/NguCanhThongBao';
 import { layThongBaoLoi } from '../services/goiApi';
-import { ONhapMatKhau } from '../components/ThanhPhanChung';
+import { GoiYMatKhau, ONhapMatKhau } from '../components/ThanhPhanChung';
+import { kiemTraMatKhauHopLe } from '../utils/kiemTraMatKhau';
 
 export function TrangDangKy() {
   const { dangKy } = suDungXacThuc();
@@ -26,6 +27,11 @@ export function TrangDangKy() {
   const xuLyGui = async (e) => {
     e.preventDefault();
     datLoi('');
+    const loiMatKhau = kiemTraMatKhauHopLe(bieuMau.password, bieuMau.email);
+    if (loiMatKhau) {
+      datLoi(loiMatKhau);
+      return;
+    }
     if (bieuMau.password !== bieuMau.confirmPassword) {
       datLoi('Mật khẩu xác nhận không khớp');
       return;
@@ -130,7 +136,8 @@ export function TrangDangKy() {
               <div className="col-md-6">
                 <label className="form-label">Mật khẩu</label>
                 <ONhapMatKhau
-                  minLength={6}
+                  minLength={8}
+                  placeholder="VD: EduClass@2026"
                   value={bieuMau.password}
                   onChange={(e) => datBieuMau((p) => ({ ...p, password: e.target.value }))}
                   required
@@ -140,11 +147,16 @@ export function TrangDangKy() {
               <div className="col-md-6">
                 <label className="form-label">Nhập lại mật khẩu</label>
                 <ONhapMatKhau
-                  minLength={6}
+                  minLength={8}
+                  placeholder="Nhập lại mật khẩu"
                   value={bieuMau.confirmPassword}
                   onChange={(e) => datBieuMau((p) => ({ ...p, confirmPassword: e.target.value }))}
                   required
                 />
+              </div>
+
+              <div className="col-12">
+                <GoiYMatKhau matKhau={bieuMau.password} />
               </div>
 
               <div className="col-12 mt-3">

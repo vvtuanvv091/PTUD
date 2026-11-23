@@ -2,6 +2,7 @@ const User = require('../../models/NguoiDung');
 const Course = require('../../models/KhoaHoc');
 const Enrollment = require('../../models/GhiDanh');
 const { LoiUngDung } = require('../../middleware/errorMiddleware');
+const { kiemTraDoManhMatKhau } = require('../../utils/kiemTraMatKhau');
 
 const layDanhSachNguoiDung = async ({ search, role, status }) => {
   const filter = {};
@@ -45,6 +46,7 @@ const taoNguoiDungMoi = async ({ fullName, email, password, role, studentCode, d
   if (!fullName || !email || !password) {
     throw new LoiUngDung('Vui lòng nhập đầy đủ họ tên, email và mật khẩu', 400);
   }
+  kiemTraDoManhMatKhau(password, { email });
   const vaiTro = ['admin', 'teacher', 'student'].includes(role) ? role : 'student';
 
   const user = await User.create({

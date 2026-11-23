@@ -492,7 +492,7 @@ export function TrangChu() {
                   Trải nghiệm hệ thống ngay hôm nay
                 </h2>
                 <p className="text-muted mb-3" style={{ maxWidth: 640 }}>
-                  Hệ thống đã chuẩn bị sẵn tài khoản cho 3 vai trò mẫu (mật khẩu chung <code>123456</code>).
+                  Hệ thống đã chuẩn bị sẵn tài khoản cho 3 vai trò mẫu (mật khẩu chung <code>EduClass@2026</code>).
                   Màn hình đăng nhập hỗ trợ 1-click điền nhanh để kiểm thử đầy đủ nghiệp vụ.
                 </p>
                 <div className="d-flex flex-wrap gap-2">

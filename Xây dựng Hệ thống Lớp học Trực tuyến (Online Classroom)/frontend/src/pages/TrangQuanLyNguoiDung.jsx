@@ -5,6 +5,7 @@ import { suDungXacThuc } from '../context/NguCanhXacThuc';
 import { suDungThongBao } from '../context/NguCanhThongBao';
 import {
   AnhDaiDien,
+  GoiYMatKhau,
   HopThoai,
   KhungChoTai,
   NhanVaiTro,
@@ -12,6 +13,7 @@ import {
   TrangThaiTrong,
 } from '../components/ThanhPhanChung';
 import { dinhDangNgay } from '../utils/dinhDang';
+import { kiemTraMatKhauHopLe } from '../utils/kiemTraMatKhau';
 
 const TAI_KHOAN_TRONG = {
   fullName: '',
@@ -88,6 +90,11 @@ export function TrangQuanLyNguoiDung() {
 
   const xuLyTaoNguoiDung = async (e) => {
     e.preventDefault();
+    const loiMatKhau = kiemTraMatKhauHopLe(bieuMau.password, bieuMau.email);
+    if (loiMatKhau) {
+      thongBao.loi(loiMatKhau);
+      return;
+    }
     datDangTao(true);
     try {
       await goiApi.post('/admin/users', bieuMau);
@@ -315,9 +322,11 @@ export function TrangQuanLyNguoiDung() {
               <ONhapMatKhau
                 value={bieuMau.password}
                 onChange={(e) => datBieuMau((p) => ({ ...p, password: e.target.value }))}
-                minLength={6}
+                minLength={8}
+                placeholder="VD: EduClass@2026"
                 required
               />
+              <GoiYMatKhau matKhau={bieuMau.password} />
             </div>
             <div className="col-6">
               <label className="form-label">Vai trò</label>

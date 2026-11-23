@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Eye, EyeOff, X } from 'lucide-react';
+import { Check, Circle, Eye, EyeOff, X } from 'lucide-react';
 import { layChuCaiDau, layNhanVaiTro } from '../utils/dinhDang';
 import { taoDuongDanTep } from '../services/goiApi';
+import { layQuyTacMatKhau } from '../utils/kiemTraMatKhau';
 
 export function DemSoDong({ giaTriMucTieu = 0, thoiGian = 1000 }) {
   const [soHienThi, datSoHienThi] = useState(0);
@@ -205,6 +206,24 @@ export function ONhapMatKhau({ className = '', ...props }) {
       >
         {hienMatKhau ? <EyeOff size={17} /> : <Eye size={17} />}
       </button>
+    </div>
+  );
+}
+
+export function GoiYMatKhau({ matKhau = '' }) {
+  const dsQuyTac = layQuyTacMatKhau(matKhau);
+
+  return (
+    <div className="mt-2 d-flex flex-column gap-1" style={{ fontSize: '0.78rem' }}>
+      {dsQuyTac.map((qt) => (
+        <div
+          key={qt.ma}
+          className={`d-flex align-items-center gap-1 ${qt.dat ? 'text-success fw-medium' : 'text-secondary'}`}
+        >
+          {qt.dat ? <Check size={13} className="flex-shrink-0" /> : <Circle size={11} className="flex-shrink-0 opacity-50" />}
+          <span>{qt.nhan}</span>
+        </div>
+      ))}
     </div>
   );
 }

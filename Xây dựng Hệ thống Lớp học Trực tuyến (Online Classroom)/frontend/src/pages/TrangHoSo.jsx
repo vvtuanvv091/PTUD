@@ -3,7 +3,8 @@ import { Camera, Check, KeyRound, RotateCcw, Save, UploadCloud } from 'lucide-re
 import goiApi, { layThongBaoLoi } from '../services/goiApi';
 import { suDungXacThuc } from '../context/NguCanhXacThuc';
 import { suDungThongBao } from '../context/NguCanhThongBao';
-import { AnhDaiDien, NhanVaiTro, ONhapMatKhau } from '../components/ThanhPhanChung';
+import { AnhDaiDien, GoiYMatKhau, NhanVaiTro, ONhapMatKhau } from '../components/ThanhPhanChung';
+import { kiemTraMatKhauHopLe } from '../utils/kiemTraMatKhau';
 
 const ANH_DAI_DIEN_CO_SAN = [
   { nhan: 'Giảng viên Nam', anh: '/assets/img/trainers/trainer-1.jpg' },
@@ -95,6 +96,15 @@ export function TrangHoSo() {
 
   const xuLyDoiMatKhau = async (e) => {
     e.preventDefault();
+    const loiMatKhau = kiemTraMatKhauHopLe(matKhau.newPassword, nguoiDung?.email);
+    if (loiMatKhau) {
+      thongBao.loi(loiMatKhau);
+      return;
+    }
+    if (matKhau.newPassword === matKhau.currentPassword) {
+      thongBao.loi('Mật khẩu mới không được trùng với mật khẩu hiện tại');
+      return;
+    }
     if (matKhau.newPassword !== matKhau.confirmPassword) {
       thongBao.loi('Mật khẩu mới nhập lại chưa khớp');
       return;
@@ -284,16 +294,18 @@ export function TrangHoSo() {
               <div>
                 <label className="form-label">Mật khẩu mới</label>
                 <ONhapMatKhau
-                  minLength={6}
+                  minLength={8}
+                  placeholder="Tối thiểu 8 ký tự, gồm hoa, thường, số, ký tự đặc biệt"
                   value={matKhau.newPassword}
                   onChange={(e) => datMatKhau((p) => ({ ...p, newPassword: e.target.value }))}
                   required
                 />
+                <GoiYMatKhau matKhau={matKhau.newPassword} />
               </div>
               <div>
                 <label className="form-label">Nhập lại mật khẩu mới</label>
                 <ONhapMatKhau
-                  minLength={6}
+                  minLength={8}
                   value={matKhau.confirmPassword}
                   onChange={(e) => datMatKhau((p) => ({ ...p, confirmPassword: e.target.value }))}
                   required

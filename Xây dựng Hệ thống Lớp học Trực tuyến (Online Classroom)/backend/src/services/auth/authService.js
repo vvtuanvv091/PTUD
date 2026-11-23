@@ -1,6 +1,7 @@
 const User = require('../../models/NguoiDung');
 const { kyToken } = require('../../utils/jwt');
 const { LoiUngDung } = require('../../middleware/errorMiddleware');
+const { kiemTraDoManhMatKhau } = require('../../utils/kiemTraMatKhau');
 
 const MAU_AVATAR = ['#DB303A', '#B7212B', '#0284C7', '#166534', '#7C3AED', '#D97706'];
 
@@ -22,9 +23,7 @@ const dangKyTaiKhoan = async ({ fullName, email, password, role, studentCode, de
   if (!fullName || !email || !password) {
     throw new LoiUngDung('Vui lòng nhập đầy đủ họ tên, email và mật khẩu', 400);
   }
-  if (password.length < 6) {
-    throw new LoiUngDung('Mật khẩu phải có ít nhất 6 ký tự', 400);
-  }
+  kiemTraDoManhMatKhau(password, { email });
 
   // Tu dang ky chi cho phep Student hoac Teacher (khong tu tao Admin)
   const vaiTroHopLe = role === 'teacher' ? 'teacher' : 'student';
@@ -98,12 +97,14 @@ const doiMatKhauCaNhan = async (userId, { currentPassword, newPassword }) => {
   if (!currentPassword || !newPassword) {
     throw new LoiUngDung('Vui lòng nhập mật khẩu hiện tại và mật khẩu mới', 400);
   }
-  if (newPassword.length < 6) {
-    throw new LoiUngDung('Mật khẩu mới phải có tối thiểu 6 ký tự', 400);
+  if (newPassword === currentPassword) {
+    throw new LoiUngDung('Mật khẩu mới không được trùng với mật khẩu hiện tại', 400);
   }
 
   const user = await User.findById(userId).select('+password');
   if (!user) throw new LoiUngDung('Không tìm thấy tài khoản', 404);
+
+  kiemTraDoManhMatKhau(newPassword, { email: user.email });
 
   const khopMatKhau = await user.kiemTraMatKhau(currentPassword);
   if (!khopMatKhau) {

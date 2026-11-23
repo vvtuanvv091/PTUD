@@ -79,14 +79,14 @@ npm run dev:frontend
 
 ---
 
-## 4. Tai khoan trai nghiem he thong (Mat khau mac dinh: `123456`)
+## 4. Tai khoan trai nghiem he thong (Mat khau mac dinh: `EduClass@2026`)
 
 | Vai tro | Email dang nhap | Mat khau | Mo ta chuc nang |
 | :--- | :--- | :--- | :--- |
-| **Quan tri vien (Admin)** | `admin@educlass.vn` | `123456` | Khoa/mo tai khoan, quan ly danh muc, giam sat lop toan truong |
-| **Giang vien (Teacher)** | `giangvien@educlass.vn` | `123456` | Tao lop, dang hoc lieu, cham diem bai tap, xuat bang diem CSV |
-| **Sinh vien (Student)** | `sinhvien@educlass.vn` | `123456` | Ghi danh lop hoc, xem tai lieu, nop bai tap, xem bang diem |
-| **Tai khoan bi khoa (Locked)** | `locked.sv@educlass.vn` | `123456` | Kiem thu co che chan truy cap cua tai khoan bi Admin khoa |
+| **Quan tri vien (Admin)** | `admin@educlass.vn` | `EduClass@2026` | Khoa/mo tai khoan, quan ly danh muc, giam sat lop toan truong |
+| **Giang vien (Teacher)** | `giangvien@educlass.vn` | `EduClass@2026` | Tao lop, dang hoc lieu, cham diem bai tap, xuat bang diem CSV |
+| **Sinh vien (Student)** | `sinhvien@educlass.vn` | `EduClass@2026` | Ghi danh lop hoc, xem tai lieu, nop bai tap, xem bang diem |
+| **Tai khoan bi khoa (Locked)** | `locked.sv@educlass.vn` | `EduClass@2026` | Kiem thu co che chan truy cap cua tai khoan bi Admin khoa |
 
 ---
 

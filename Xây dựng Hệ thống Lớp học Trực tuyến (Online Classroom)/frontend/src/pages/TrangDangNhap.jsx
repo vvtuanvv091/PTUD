@@ -89,7 +89,7 @@ export function TrangDangNhap() {
 
             <div className="border-top mt-4 pt-3">
               <div className="small text-secondary mb-2">
-                Điền nhanh tài khoản mẫu (mật khẩu: <code>123456</code>)
+                Điền nhanh tài khoản mẫu (mật khẩu: <code>EduClass@2026</code>)
               </div>
               <div className="row g-2">
                 {TAI_KHOAN_MAU.map((tk) => (
@@ -99,7 +99,7 @@ export function TrangDangNhap() {
                       className="btn nut-phu btn-sm w-100 d-flex align-items-center justify-content-between"
                       onClick={() => {
                         datEmail(tk.email);
-                        datMatKhau('123456');
+                        datMatKhau('EduClass@2026');
                         datLoi('');
                       }}
                     >

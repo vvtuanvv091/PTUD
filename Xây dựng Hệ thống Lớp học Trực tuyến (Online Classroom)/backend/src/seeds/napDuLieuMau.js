@@ -147,7 +147,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Trần Quốc Bảo',
         email: 'admin@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'admin',
         status: 'active',
         studentCode: 'AD001',
@@ -159,7 +159,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'TS. Nguyễn Hoàng Nam',
         email: 'giangvien@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'teacher',
         status: 'active',
         studentCode: 'GV101',
@@ -171,7 +171,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'ThS. Lê Thị Phương Linh',
         email: 'linh.gv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'teacher',
         status: 'active',
         studentCode: 'GV102',
@@ -183,7 +183,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'ThS. Phạm Quang Huy',
         email: 'huy.gv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'teacher',
         status: 'active',
         studentCode: 'GV103',
@@ -195,7 +195,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Trần Minh Tuấn',
         email: 'sinhvien@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'student',
         status: 'active',
         studentCode: 'SV2026001',
@@ -207,7 +207,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Nguyễn Ngọc An',
         email: 'an.sv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'student',
         status: 'active',
         studentCode: 'SV2026002',
@@ -218,7 +218,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Lê Đăng Khoa',
         email: 'khoa.sv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'student',
         status: 'active',
         studentCode: 'SV2026003',
@@ -229,7 +229,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Phạm Thảo Nhi',
         email: 'nhi.sv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'student',
         status: 'active',
         studentCode: 'SV2026004',
@@ -240,7 +240,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Vũ Hữu Đức',
         email: 'duc.sv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'student',
         status: 'active',
         studentCode: 'SV2026005',
@@ -251,7 +251,7 @@ const napDuLieuMau = async () => {
       {
         fullName: 'Hoàng Văn Bình',
         email: 'locked.sv@educlass.vn',
-        password: '123456',
+        password: 'EduClass@2026',
         role: 'student',
         status: 'locked',
         studentCode: 'SV2026006',
@@ -848,7 +848,7 @@ Enrollment.aggregate([
     ]);
 
     console.log('[Seed] Hoan tat nap du lieu mau vao HeThongLopHocTrucTuyen (8 collections).');
-    console.log('[Seed] Tai khoan demo (mat khau chung: 123456):');
+    console.log('[Seed] Tai khoan demo (mat khau chung: EduClass@2026):');
     console.log('       - Admin:     admin@educlass.vn');
     console.log('       - Teacher:   giangvien@educlass.vn');
     console.log('       - Student:   sinhvien@educlass.vn');

@@ -91,7 +91,7 @@ export function TrangKhongGian() {
   const { daDangNhap } = suDungXacThuc();
 
   return (
-    <div className="main pb-5" style={{ minHeight: '80vh' }}>
+    <div className="main pb-1" >
       <div className="container">
         {/* Tiêu đề trang */}
         <div className="text-center mb-5">
@@ -220,7 +220,7 @@ export function TrangKhongGian() {
             <div className="col-lg-8">
               <h3 className="h5 fw-bold mb-2">Sẵn sàng trải nghiệm đầy đủ 3 vai trò?</h3>
               <p className="text-muted small mb-3">
-                Hệ thống chuẩn bị sẵn tài khoản cho từng vai trò (mật khẩu chung <code>123456</code>).
+                Hệ thống chuẩn bị sẵn tài khoản cho từng vai trò (mật khẩu chung <code>EduClass@2026</code>).
                 Tại màn hình đăng nhập có sẵn nút 1 chạm để điền tự động.
               </p>
               <div className="d-flex flex-wrap gap-2">

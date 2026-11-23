@@ -20,7 +20,7 @@ const nguoiDungSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, 'Vui lòng nhập mật khẩu'],
-      minlength: [6, 'Mật khẩu cần tối thiểu 6 ký tự'],
+      minlength: [8, 'Mật khẩu cần tối thiểu 8 ký tự'],
       select: false,
     },
     role: {
